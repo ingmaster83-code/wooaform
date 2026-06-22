@@ -91,8 +91,7 @@
 <div class="form-hero">
   <span class="cat-badge">💼 업무 / 비즈니스</span>
   <h1>인수인계서</h1>
-  <p>업무 인수인계 표준 서식 — HWP · Word 무료 제공</p>
-  <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" class="btn-download">📥 표준 인수인계서 양식 다운로드</a>
+  <p>로그인 없이 바로 다운로드</p>
 </div>
 
 <div class="page-with-sidebar">
@@ -113,6 +112,24 @@
   <div class="desc-box">
     인수인계서는 퇴직·이직·휴직 등으로 업무를 이관할 때 현황과 진행 상황을 정리한 문서입니다. 후임자가 빠르게 업무를 파악할 수 있도록 핵심 내용을 체계적으로 정리하는 것이 중요합니다.
   </div>
+  <div class="download-trigger-wrap">
+    <button class="btn-download-main" onclick="toggleDownloadPanel()">📥 다운로드</button>
+  </div>
+  <div class="download-panel" id="downloadPanel">
+    <div class="dl-panel-btns">
+      <a href="../files/handover.hwp" download class="btn-dl btn-dl-hwp">📥 HWP 다운로드</a>
+      <a href="../files/handover.doc" download class="btn-dl btn-dl-docx">📥 Word 다운로드</a>
+    </div>
+    <div class="dl-panel-ad">
+      <ins class="adsbygoogle" style="display:block;width:100%;min-height:100px"
+        data-ad-client="ca-pub-6464921081676309"
+        data-ad-slot="9432796175"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+  </div>
+
 
   <p class="section-title">작성 항목</p>
   <ul class="uses-list">
@@ -161,6 +178,31 @@
 
 <footer class="footer"></footer>
 
+<script>
+var _dlReady = false;
+function toggleDownloadPanel() {
+  var panel = document.getElementById('downloadPanel');
+  var isOpen = panel.classList.contains('active');
+  if (isOpen) { panel.classList.remove('active'); return; }
+  panel.classList.add('active');
+  if (_dlReady) return;
+  var btns = panel.querySelectorAll('.btn-dl');
+  btns.forEach(function(btn) {
+    btn.dataset.label = btn.innerHTML;
+    btn.classList.add('btn-dl-wait');
+  });
+  var sec = 6;
+  function tick() {
+    btns.forEach(function(btn) { btn.innerHTML = '⏳ 다운로드 준비 중... (' + sec + '초)'; });
+    if (sec <= 0) {
+      btns.forEach(function(btn) { btn.innerHTML = btn.dataset.label; btn.classList.remove('btn-dl-wait'); });
+      _dlReady = true; return;
+    }
+    sec--; setTimeout(tick, 1000);
+  }
+  tick();
+}
+</script>
 <script src="../js/wooaform-related-forms.js"></script>
 <script src="../js/wooahouse-originals-tool.js"></script>
 <script src="../js/wooa-sidebar.js"></script>

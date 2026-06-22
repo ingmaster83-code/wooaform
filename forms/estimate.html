@@ -91,8 +91,7 @@
 <div class="form-hero">
   <span class="cat-badge">💼 업무 / 비즈니스</span>
   <h1>견적서</h1>
-  <p>중소벤처기업부 표준 양식 — HWP · Excel 무료 제공</p>
-  <a href="https://www.mss.go.kr" target="_blank" rel="noopener noreferrer" class="btn-download">📥 중소벤처기업부 공식 다운로드</a>
+  <p>로그인 없이 바로 다운로드</p>
 </div>
 
 <div class="page-with-sidebar">
@@ -105,7 +104,7 @@
   <div class="info-grid">
     <div class="info-card"><div class="label">카테고리</div><div class="value">업무 / 비즈니스</div></div>
     <div class="info-card"><div class="label">공식 출처</div><div class="value">중소벤처기업부</div></div>
-    <div class="info-card"><div class="label">제공 형식</div><div class="value">HWP · Excel</div></div>
+    <div class="info-card"><div class="label">제공 형식</div><div class="value">HWP</div></div>
     <div class="info-card"><div class="label">비용</div><div class="value">✅ 완전 무료</div></div>
   </div>
 
@@ -113,6 +112,23 @@
   <div class="desc-box">
     견적서는 거래 전 제품·서비스의 가격을 상대방에게 제시하는 문서입니다. 품목명, 수량, 단가, 합계, 부가세 등을 명시하며, 계약 성사 전 가격 협의의 근거가 됩니다.
   </div>
+  <div class="download-trigger-wrap">
+    <button class="btn-download-main" onclick="toggleDownloadPanel()">📥 다운로드</button>
+  </div>
+  <div class="download-panel" id="downloadPanel">
+    <div class="dl-panel-btns">
+      <a href="../files/estimate.hwp" download class="btn-dl btn-dl-hwp">📥 HWP 다운로드</a>
+    </div>
+    <div class="dl-panel-ad">
+      <ins class="adsbygoogle" style="display:block;width:100%;min-height:100px"
+        data-ad-client="ca-pub-6464921081676309"
+        data-ad-slot="9432796175"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+  </div>
+
 
   <p class="section-title">활용 분야</p>
   <ul class="uses-list">
@@ -160,6 +176,31 @@
 
 <footer class="footer"></footer>
 
+<script>
+var _dlReady = false;
+function toggleDownloadPanel() {
+  var panel = document.getElementById('downloadPanel');
+  var isOpen = panel.classList.contains('active');
+  if (isOpen) { panel.classList.remove('active'); return; }
+  panel.classList.add('active');
+  if (_dlReady) return;
+  var btns = panel.querySelectorAll('.btn-dl');
+  btns.forEach(function(btn) {
+    btn.dataset.label = btn.innerHTML;
+    btn.classList.add('btn-dl-wait');
+  });
+  var sec = 6;
+  function tick() {
+    btns.forEach(function(btn) { btn.innerHTML = '⏳ 다운로드 준비 중... (' + sec + '초)'; });
+    if (sec <= 0) {
+      btns.forEach(function(btn) { btn.innerHTML = btn.dataset.label; btn.classList.remove('btn-dl-wait'); });
+      _dlReady = true; return;
+    }
+    sec--; setTimeout(tick, 1000);
+  }
+  tick();
+}
+</script>
 <script src="../js/wooaform-related-forms.js"></script>
 <script src="../js/wooahouse-originals-tool.js"></script>
 <script src="../js/wooa-sidebar.js"></script>

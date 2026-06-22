@@ -1,0 +1,26 @@
+{
+  "name": "WooaForm - 무료 양식 모음",
+  "short_name": "WooaForm",
+  "description": "근로계약서·이력서·견적서 등 무료 양식·서식 큐레이션. 공식 출처만 엄선.",
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "background_color": "#1A1A2E",
+  "theme_color": "#2563EB",
+  "lang": "ko",
+  "orientation": "portrait-primary",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

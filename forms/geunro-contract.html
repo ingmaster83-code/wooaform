@@ -91,8 +91,7 @@
 <div class="form-hero">
   <span class="cat-badge">📋 계약 / 법률</span>
   <h1>표준근로계약서</h1>
-  <p>고용노동부 공식 양식 — HWP · PDF 무료 제공</p>
-  <a href="https://www.moel.go.kr/policy/policyinfo/labor/list.do" target="_blank" rel="noopener noreferrer" class="btn-download">📥 고용노동부 공식 다운로드</a>
+  <p>고용노동부 공식 양식 — 로그인 없이 바로 다운로드</p>
 </div>
 
 <div class="page-with-sidebar">
@@ -105,13 +104,30 @@
   <div class="info-grid">
     <div class="info-card"><div class="label">카테고리</div><div class="value">계약 / 법률</div></div>
     <div class="info-card"><div class="label">공식 출처</div><div class="value">고용노동부</div></div>
-    <div class="info-card"><div class="label">제공 형식</div><div class="value">HWP · PDF</div></div>
+    <div class="info-card"><div class="label">제공 형식</div><div class="value">HWP</div></div>
     <div class="info-card"><div class="label">비용</div><div class="value">✅ 완전 무료</div></div>
   </div>
 
   <p class="section-title">양식 소개</p>
   <div class="desc-box">
     표준근로계약서는 고용노동부가 제공하는 공식 양식으로, 사용자와 근로자 사이의 근로조건을 명시하는 법적 문서입니다. 근로기준법에 따라 근로계약서는 반드시 서면으로 작성해야 하며, 근로자에게 교부할 의무가 있습니다. 정규직·기간제·단시간 근로자 등 고용 유형에 따라 별도의 양식이 제공됩니다.
+  </div>
+
+  <div class="download-trigger-wrap">
+    <button class="btn-download-main" onclick="toggleDownloadPanel()">📥 다운로드</button>
+  </div>
+  <div class="download-panel" id="downloadPanel">
+    <div class="dl-panel-btns">
+      <a href="../files/geunro-contract.hwp" download class="btn-dl btn-dl-hwp">📥 HWP 다운로드</a>
+    </div>
+    <div class="dl-panel-ad">
+      <ins class="adsbygoogle" style="display:block;width:100%;min-height:100px"
+        data-ad-client="ca-pub-6464921081676309"
+        data-ad-slot="9432796175"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
   </div>
 
   <p class="section-title">양식 종류</p>
@@ -154,8 +170,8 @@
       <p>4대 보험 가입 여부는 근로계약서 필수 기재사항은 아니지만, 취업규칙이나 별도 안내문으로 근로자에게 알려주는 것이 바람직합니다. 주 15시간 이상 근무하는 근로자는 고용·산재보험이 의무 적용됩니다.</p>
     </details>
     <details>
-      <summary>이 사이트에서 개인정보가 수집되나요?</summary>
-      <p>아니요. 이 페이지는 양식 정보와 공식 다운로드 링크만 안내합니다. 개인정보를 입력하거나 파일을 업로드하는 기능은 없으며, 어떠한 개인정보도 수집하지 않습니다.</p>
+      <summary>파일이 인터넷에 업로드되나요?</summary>
+      <p>아니요. 다운로드 버튼을 누르면 파일이 이 사이트의 서버에서 직접 내 기기로 전달됩니다. 개인정보를 입력하거나 파일을 업로드하는 기능은 없으며, 어떠한 개인정보도 수집하지 않습니다.</p>
     </details>
   </div>
 
@@ -164,6 +180,42 @@
 </div>
 
 <footer class="footer"></footer>
+
+<script>
+var _dlReady = false;
+
+function toggleDownloadPanel() {
+  var panel = document.getElementById('downloadPanel');
+  var isOpen = panel.classList.contains('active');
+  if (isOpen) { panel.classList.remove('active'); return; }
+  panel.classList.add('active');
+  if (_dlReady) return;
+
+  var btns = panel.querySelectorAll('.btn-dl');
+  btns.forEach(function(btn) {
+    btn.dataset.label = btn.innerHTML;
+    btn.classList.add('btn-dl-wait');
+  });
+
+  var sec = 6;
+  function tick() {
+    btns.forEach(function(btn) {
+      btn.innerHTML = '⏳ 다운로드 준비 중... (' + sec + '초)';
+    });
+    if (sec <= 0) {
+      btns.forEach(function(btn) {
+        btn.innerHTML = btn.dataset.label;
+        btn.classList.remove('btn-dl-wait');
+      });
+      _dlReady = true;
+      return;
+    }
+    sec--;
+    setTimeout(tick, 1000);
+  }
+  tick();
+}
+</script>
 
 <script src="../js/wooaform-related-forms.js"></script>
 <script src="../js/wooahouse-originals-tool.js"></script>
