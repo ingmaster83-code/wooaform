@@ -120,8 +120,14 @@
   </div>
   <div class="download-panel" id="downloadPanel">
     <div class="dl-panel-btns">
-      <a href="../files/jungse-contract.docx" download class="btn-dl btn-dl-docx">📥 DOCX 다운로드</a>
-      <a href="../files/jungse-contract.pdf" download class="btn-dl btn-dl-pdf">📥 PDF 다운로드</a>
+      <div class="dl-row">
+        <a href="../preview.html?slug=jungse-contract&name=%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EA%B3%84%EC%95%BD%EC%84%9C" target="_blank" rel="noopener" class="btn-dl-half btn-preview">👁️ 미리보기</a>
+        <a href="../files/jungse-contract.docx" download class="btn-dl-half btn-dl-docx">📥 DOCX 다운로드</a>
+      </div>
+      <div class="dl-row">
+        <a href="../preview.html?slug=jungse-contract&name=%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EA%B3%84%EC%95%BD%EC%84%9C" target="_blank" rel="noopener" class="btn-dl-half btn-preview">👁️ 미리보기</a>
+        <a href="../files/jungse-contract.pdf" download class="btn-dl-half btn-dl-pdf">📥 PDF 다운로드</a>
+      </div>
     </div>
     <div class="dl-panel-ad">
       <ins class="adsbygoogle" style="display:block;width:100%;min-height:100px"
@@ -178,28 +184,9 @@
 <footer class="footer"></footer>
 
 <script>
-var _dlReady = false;
 function toggleDownloadPanel() {
   var panel = document.getElementById('downloadPanel');
-  var isOpen = panel.classList.contains('active');
-  if (isOpen) { panel.classList.remove('active'); return; }
-  panel.classList.add('active');
-  if (_dlReady) return;
-  var btns = panel.querySelectorAll('.btn-dl');
-  btns.forEach(function(btn) {
-    btn.dataset.label = btn.innerHTML;
-    btn.classList.add('btn-dl-wait');
-  });
-  var sec = 6;
-  function tick() {
-    btns.forEach(function(btn) { btn.innerHTML = '⏳ 다운로드 준비 중... (' + sec + '초)'; });
-    if (sec <= 0) {
-      btns.forEach(function(btn) { btn.innerHTML = btn.dataset.label; btn.classList.remove('btn-dl-wait'); });
-      _dlReady = true; return;
-    }
-    sec--; setTimeout(tick, 1000);
-  }
-  tick();
+  panel.classList.toggle('active');
 }
 </script>
 

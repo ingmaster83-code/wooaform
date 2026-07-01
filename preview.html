@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title id="pvTitle">서식 미리보기 | WooaForm</title>
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="preview-topbar">
+  <span class="pv-name" id="pvName">불러오는 중...</span>
+  <a href="#" id="pvDownload" class="btn-dl btn-dl-pdf" download>📥 PDF 다운로드</a>
+</div>
+
+<div class="preview-ad-wrap">
+  <ins class="adsbygoogle" style="display:block;width:100%;min-height:100px"
+    data-ad-client="ca-pub-6464921081676309"
+    data-ad-slot="9432796175"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div class="preview-frame-wrap">
+  <iframe id="pvFrame" class="preview-frame" title="서식 미리보기" src=""></iframe>
+</div>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('slug');
+  var name = params.get('name') || slug || '서식';
+  if (slug) {
+    var pdfPath = 'files/' + slug + '.pdf';
+    document.getElementById('pvFrame').src = pdfPath;
+    document.getElementById('pvDownload').href = pdfPath;
+    document.getElementById('pvDownload').setAttribute('download', slug + '.pdf');
+  }
+  document.getElementById('pvName').textContent = name + ' 미리보기';
+  document.title = name + ' 미리보기 | WooaForm';
+</script>
+
+</body>
+</html>

@@ -530,15 +530,31 @@ nav a:hover { background: rgba(255,255,255,0.18); color: white; }
 .btn-dl-xlsx { background: #16A34A; color: white; }
 .btn-dl-docx { background: #1D4ED8; color: white; }
 
-.btn-dl.btn-dl-wait {
-  pointer-events: none;
-  background: #9CA3AF !important;
-  box-shadow: none;
-  transform: none;
-  cursor: default;
-}
-
 .dl-panel-ad { border-top: 1px solid var(--border); padding-top: 16px; }
+
+/* ───── Preview + Download split row ───── */
+.dl-row { display: flex; gap: 0; }
+.btn-dl-half {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 13px 10px;
+  text-decoration: none;
+  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.btn-dl-half:first-child { border-radius: 12px 0 0 12px; }
+.btn-dl-half:last-child  { border-radius: 0 12px 12px 0; }
+.btn-preview {
+  background: #F3F4F6;
+  color: #374151;
+  border: 1px solid #E5E7EB;
+  border-right: none;
+}
+.btn-preview:hover { background: #E5E7EB; }
 
 /* ───── FAQ ───── */
 .faq-section { margin: 24px 0 40px; }
@@ -564,6 +580,18 @@ nav a:hover { background: rgba(255,255,255,0.18); color: white; }
 .faq-section summary::before { content: '＋'; margin-right: 8px; color: var(--primary); }
 .faq-section details[open] summary::before { content: '－'; }
 .faq-section details p { padding: 0 18px 14px; font-size: 0.85rem; color: #4B5563; line-height: 1.7; }
+
+/* ───── Preview page ───── */
+.preview-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 12px 20px; background: white;
+  border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50;
+}
+.preview-topbar .pv-name { font-weight: 700; font-size: 1rem; color: var(--text); }
+.preview-topbar .btn-dl { padding: 9px 18px; font-size: .88rem; }
+.preview-ad-wrap { max-width: 900px; margin: 16px auto; padding: 0 20px; }
+.preview-frame-wrap { max-width: 900px; margin: 0 auto 30px; padding: 0 20px; }
+.preview-frame { width: 100%; height: 80vh; border: 1px solid var(--border); border-radius: 12px; background: #F3F4F6; }
 
 /* ───── Footer (공용 JS 주입) ───── */
 .footer { background: #111827; color: #9CA3AF; padding: 40px 0 24px; font-size: .85rem; }
