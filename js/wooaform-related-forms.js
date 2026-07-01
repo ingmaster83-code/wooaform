@@ -40,6 +40,12 @@
     { s:'charyongjeung',       ko:'차용증',             i:'💴', c:'finance',  url:'forms/charyongjeung.html',       internal:true },
     { s:'cash-ledger',         ko:'현금출납장',         i:'💴', c:'finance',  url:'forms/cash-ledger.html',         internal:true },
     { s:'settlement',          ko:'정산서',             i:'🧮', c:'finance',  url:'forms/settlement.html',          internal:true },
+    /* ── 3차 배치 ── */
+    { s:'parental-leave',      ko:'육아휴직신청서',     i:'👶', c:'hr',       url:'forms/parental-leave.html',      internal:true },
+    { s:'warning-letter',      ko:'경고장',             i:'⚠️', c:'hr',       url:'forms/warning-letter.html',      internal:true },
+    { s:'tax-invoice',         ko:'세금계산서',         i:'🧾', c:'finance',  url:'forms/tax-invoice.html',         internal:true },
+    { s:'payroll-ledger',      ko:'급여대장',           i:'📒', c:'finance',  url:'forms/payroll-ledger.html',      internal:true },
+    { s:'contract-termination',ko:'계약해지통지서',     i:'📮', c:'contract', url:'forms/contract-termination.html',internal:true },
   ];
 
   /* ── 현재 페이지 slug 감지 ── */
