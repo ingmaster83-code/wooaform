@@ -25,6 +25,21 @@
     { s:'payslip',           ko:'급여명세서',           i:'💵', c:'finance',  url:'forms/payslip.html',          internal:true },
     { s:'receipt',           ko:'영수증 양식',          i:'🧾', c:'finance',  url:'forms/receipt.html',          internal:true },
     { s:'invoice',           ko:'청구서',               i:'📄', c:'finance',  url:'forms/invoice.html',          internal:true },
+    /* ── 2차 배치 ── */
+    { s:'gakseo',              ko:'각서',               i:'✍️', c:'contract', url:'forms/gakseo.html',              internal:true },
+    { s:'wiimjang',            ko:'위임장',             i:'🪪', c:'contract', url:'forms/wiimjang.html',            internal:true },
+    { s:'sangga-contract',     ko:'상가임대차계약서',   i:'🏪', c:'contract', url:'forms/sangga-contract.html',     internal:true },
+    { s:'partnership-contract',ko:'동업계약서',         i:'🧑‍🤝‍🧑', c:'contract', url:'forms/partnership-contract.html', internal:true },
+    { s:'car-contract',        ko:'자동차매매계약서',   i:'🚗', c:'contract', url:'forms/car-contract.html',        internal:true },
+    { s:'work-log',            ko:'업무일지',           i:'📅', c:'business', url:'forms/work-log.html',            internal:true },
+    { s:'weekly-report',       ko:'주간업무보고서',     i:'📊', c:'business', url:'forms/weekly-report.html',       internal:true },
+    { s:'jasogaeseo',          ko:'자기소개서',         i:'📝', c:'hr',       url:'forms/jasogaeseo.html',          internal:true },
+    { s:'gyeongwiseo',         ko:'경위서',             i:'📃', c:'hr',       url:'forms/gyeongwiseo.html',         internal:true },
+    { s:'banseongmun',         ko:'반성문',             i:'🙏', c:'hr',       url:'forms/banseongmun.html',         internal:true },
+    { s:'pyochangjang',        ko:'표창장',             i:'🏆', c:'hr',       url:'forms/pyochangjang.html',        internal:true },
+    { s:'charyongjeung',       ko:'차용증',             i:'💴', c:'finance',  url:'forms/charyongjeung.html',       internal:true },
+    { s:'cash-ledger',         ko:'현금출납장',         i:'💴', c:'finance',  url:'forms/cash-ledger.html',         internal:true },
+    { s:'settlement',          ko:'정산서',             i:'🧮', c:'finance',  url:'forms/settlement.html',          internal:true },
   ];
 
   /* ── 현재 페이지 slug 감지 ── */
