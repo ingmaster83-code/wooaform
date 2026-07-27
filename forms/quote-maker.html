@@ -46,7 +46,7 @@
     "mainEntity": [
       {"@type":"Question","name":"입력한 내 정보가 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. '자동 저장'을 체크하면 내 브라우저의 localStorage에만 저장되며, 서버로는 전송되지 않습니다. 브라우저 저장 데이터를 지우면 함께 삭제됩니다."}},
       {"@type":"Question","name":"부가세 포함/별도는 어떻게 다른가요?","acceptedAnswer":{"@type":"Answer","text":"부가세 포함을 선택하면 입력한 단가에 이미 부가세가 들어있다고 보고 역산해 공급가액과 세액을 나눠 표시하고, 별도를 선택하면 입력한 금액을 공급가액으로 보고 부가세 10%를 더해 최종 금액을 계산합니다."}},
-      {"@type":"Question","name":"PDF로 저장이 안 될 때는 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"PDF 저장 버튼을 누르면 브라우저 인쇄 대화상자가 열립니다. 대상(프린터)에서 'PDF로 저장' 또는 'Microsoft Print to PDF'를 선택하면 됩니다. 이때 '추가 설정 › 머리글과 바닥글' 체크를 해제해야 날짜·URL 같은 브라우저 기본 표시가 문서에 찍히지 않습니다. 안 될 경우 인쇄 버튼으로 실제 프린터에 바로 출력할 수도 있습니다."}},
+      {"@type":"Question","name":"PDF로 저장이 안 될 때는 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"PDF 저장 버튼을 누르면 브라우저 인쇄 대화상자를 거치지 않고 문서 내용이 바로 PDF 파일로 만들어집니다. Chrome·Edge에서는 저장 위치를 직접 고르는 창이 뜨고, 그 외 브라우저에서는 다운로드 폴더에 자동 저장됩니다. 저장된 PDF를 실제 종이에 출력하고 싶다면 PDF 파일을 열어 그 프로그램에서 인쇄하면 됩니다."}},
       {"@type":"Question","name":"작성하던 문서를 나중에 다시 불러올 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 저장 버튼을 누르면 '최근 작성 문서'에 남아 브라우저를 껐다 켜도 목록에서 다시 불러올 수 있습니다. 단, 다른 기기나 브라우저에서는 보이지 않습니다."}}
     ]
   }
@@ -150,19 +150,6 @@
     #qmPreview table.doc-totals-table tr.grand td { font-size:0.92rem; }
     #qmPreview .doc-notes { font-size:0.76rem; color:#555; border-top:1px dashed #ccc; padding-top:10px; margin-top:6px; }
     #qmPreview .doc-notes li { margin-left:16px; }
-
-    @page { margin: 12mm; }
-    @media print {
-      /* 사이트바/추천도구 등 스크립트가 클래스 없이 삽입하는 요소까지 포함해
-         미리보기 조상 경로를 제외한 모든 형제 요소를 구조적으로 숨김 */
-      body > *:not(.page-with-sidebar) { display:none !important; }
-      .page-with-sidebar > *:not(.form-content) { display:none !important; }
-      .form-content > *:not(#qmPreviewWrap) { display:none !important; }
-      body, .page-with-sidebar, .form-content { display:block !important; margin:0 !important; padding:0 !important; width:auto !important; max-width:none !important; }
-      #qmPreviewWrap { box-shadow:none; padding:0; margin:0; }
-      #qmPreview { border:none; }
-      #qmPreviewWrap .no-print { display:none !important; }
-    }
 
     @media (max-width:720px) {
       .qm-doctype-tabs { flex-direction:column; }
@@ -329,10 +316,12 @@
 
   <div class="qm-actions">
     <button type="button" class="qm-btn qm-btn-primary" id="saveDocBtn">💾 저장</button>
-    <button type="button" class="qm-btn qm-btn-primary" id="pdfBtn">📥 PDF로 저장 / 인쇄</button>
+    <button type="button" class="qm-btn qm-btn-primary" id="pdfBtn">
+      <span id="pdfBtnLabel">📥 PDF로 저장</span>
+    </button>
     <button type="button" class="qm-btn qm-btn-ghost" id="resetBtn">↺ 초기화</button>
   </div>
-  <p style="font-size:0.78rem;color:var(--text-light);margin:-8px 0 16px;">💡 인쇄 대화상자에서 <strong>'추가 설정 &rsaquo; 머리글과 바닥글'</strong> 체크를 해제하면 날짜·페이지 제목 없이 깔끔하게 저장돼요.</p>
+  <p style="font-size:0.78rem;color:var(--text-light);margin:-8px 0 16px;">💡 브라우저의 인쇄 대화상자를 거치지 않고 문서 내용만 그대로 PDF 파일로 만들어요. 지원하는 브라우저(Chrome·Edge)에서는 저장 위치도 직접 선택할 수 있어요.</p>
 
   <!-- 최근 문서 -->
   <div class="qm-card">
@@ -342,7 +331,7 @@
 
   <!-- 미리보기 -->
   <div id="qmPreviewWrap">
-    <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
       <p class="section-title" style="margin:0;" id="previewLabel">📄 표준 견적서 미리보기</p>
     </div>
     <div id="qmPreview"></div>
@@ -355,8 +344,8 @@
     <ul>
       <li>견적 유효기간을 명시하지 않으면 이후 가격 인상 시 분쟁이 생길 수 있으니 반드시 기재하세요.</li>
       <li>부가세 포함(VAT 포함)/별도 여부를 명확히 표기해 오해를 방지하세요.</li>
-      <li>"PDF로 저장" 버튼을 누른 뒤 인쇄 대화상자에서 프린터로 'PDF로 저장'을 선택하면 파일로 바로 저장됩니다.</li>
-      <li>이때 '추가 설정 › 머리글과 바닥글' 체크를 해제해야 날짜·URL 같은 브라우저 기본 표시가 문서에 찍히지 않습니다.</li>
+      <li>"PDF로 저장" 버튼을 누르면 브라우저 인쇄 화면 없이 문서만 그대로 PDF 파일로 바로 저장됩니다.</li>
+      <li>Chrome·Edge에서는 저장 위치를 직접 선택하는 창이 뜨고, 그 외 브라우저에서는 다운로드 폴더에 자동 저장됩니다.</li>
     </ul>
   </div>
 
@@ -372,7 +361,7 @@
     </details>
     <details>
       <summary>PDF로 저장이 안 될 때는 어떻게 하나요?</summary>
-      <p>PDF 저장 버튼을 누르면 브라우저 인쇄 대화상자가 열립니다. 대상(프린터)에서 'PDF로 저장' 또는 'Microsoft Print to PDF'를 선택하면 됩니다. 이때 '추가 설정 › 머리글과 바닥글' 체크를 해제해야 날짜·URL 같은 브라우저 기본 표시가 문서에 찍히지 않습니다. 안 될 경우 인쇄 버튼으로 실제 프린터에 바로 출력할 수도 있습니다.</p>
+      <p>PDF 저장 버튼을 누르면 브라우저 인쇄 대화상자를 거치지 않고 문서 내용이 바로 PDF 파일로 만들어집니다. Chrome·Edge에서는 저장 위치를 직접 고르는 창이 뜨고, 그 외 브라우저에서는 다운로드 폴더에 자동 저장됩니다. 저장된 PDF를 실제 종이에 출력하고 싶다면 PDF 파일을 열어 그 프로그램에서 인쇄하면 됩니다.</p>
     </details>
     <details>
       <summary>작성하던 문서를 나중에 다시 불러올 수 있나요?</summary>
@@ -386,6 +375,8 @@
 
 <footer class="footer"></footer>
 
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 <script>
 (function() {
   var LS_SENDER = 'wooaform_qm_sender';
@@ -727,7 +718,98 @@
     alert('저장되었습니다. 아래 "최근 작성 문서"에서 다시 불러올 수 있어요.');
   });
 
-  $('pdfBtn').addEventListener('click', function() { window.print(); });
+  // ── PDF 내보내기 (브라우저 인쇄 대화상자 미사용) ──
+  function computePageBreaks(containerEl, pageHeightPx, scale) {
+    var containerTop = containerEl.getBoundingClientRect().top;
+    var unsplittable = Array.prototype.slice.call(containerEl.querySelectorAll('tr, .party-box, .doc-total-banner')).map(function(el) {
+      var r = el.getBoundingClientRect();
+      return { top: (r.top - containerTop) * scale, bottom: (r.bottom - containerTop) * scale };
+    });
+    var totalPx = containerEl.getBoundingClientRect().height * scale;
+    var breaks = [];
+    var cursor = 0;
+    while (cursor < totalPx - 1) {
+      var target = Math.min(cursor + pageHeightPx, totalPx);
+      if (target < totalPx) {
+        for (var i = 0; i < unsplittable.length; i++) {
+          var u = unsplittable[i];
+          if (u.top < target - 0.5 && u.bottom > target + 0.5 && u.top > cursor) { target = u.top; break; }
+        }
+      }
+      if (target <= cursor) target = Math.min(cursor + pageHeightPx, totalPx);
+      breaks.push(target);
+      cursor = target;
+    }
+    return breaks;
+  }
+
+  function exportPdf() {
+    var previewEl = $('qmPreview');
+    if (!previewEl.children.length) { alert('먼저 항목을 입력해주세요.'); return; }
+    var btn = $('pdfBtn');
+    var label = $('pdfBtnLabel');
+    var originalText = label.textContent;
+    btn.disabled = true;
+    label.textContent = '⏳ PDF 생성 중...';
+
+    var scale = 2;
+    html2canvas(previewEl, { scale: scale, backgroundColor: '#ffffff', useCORS: true }).then(function(canvas) {
+      var marginMm = 10;
+      var pageWidthMm = 210, pageHeightMm = 297;
+      var imgWidthMm = pageWidthMm - marginMm * 2;
+      var contentHeightMmPerPage = pageHeightMm - marginMm * 2;
+      var canvasPxPerMm = canvas.width / imgWidthMm;
+      var pageHeightPx = contentHeightMmPerPage * canvasPxPerMm;
+
+      var breaks = computePageBreaks(previewEl, pageHeightPx, scale);
+      var jsPDFCtor = window.jspdf.jsPDF;
+      var pdf = new jsPDFCtor({ unit: 'mm', format: 'a4' });
+      var prevY = 0;
+      breaks.forEach(function(brk, idx) {
+        var sliceHeightPx = Math.round(brk - prevY);
+        if (sliceHeightPx <= 0) return;
+        var sliceCanvas = document.createElement('canvas');
+        sliceCanvas.width = canvas.width;
+        sliceCanvas.height = sliceHeightPx;
+        var ctx = sliceCanvas.getContext('2d');
+        ctx.drawImage(canvas, 0, Math.round(prevY), canvas.width, sliceHeightPx, 0, 0, canvas.width, sliceHeightPx);
+        var sliceHeightMm = sliceHeightPx / canvasPxPerMm;
+        if (idx > 0) pdf.addPage();
+        pdf.addImage(sliceCanvas.toDataURL('image/jpeg', 0.95), 'JPEG', marginMm, marginMm, imgWidthMm, sliceHeightMm);
+        prevY = brk;
+      });
+
+      var docNoVal = ($('docNo').value || $('docNo').placeholder || 'document').replace(/[^A-Za-z0-9-_]/g, '');
+      var filename = (docType === 'invoice' ? '청구서_' : '견적서_') + docNoVal + '.pdf';
+      var blob = pdf.output('blob');
+
+      if (window.showSaveFilePicker) {
+        window.showSaveFilePicker({
+          suggestedName: filename,
+          types: [{ description: 'PDF 파일', accept: { 'application/pdf': ['.pdf'] } }]
+        }).then(function(handle) {
+          return handle.createWritable().then(function(writable) {
+            return writable.write(blob).then(function() { return writable.close(); });
+          });
+        }).catch(function(err) {
+          if (err && err.name !== 'AbortError') pdf.save(filename);
+        }).then(function() {
+          btn.disabled = false;
+          label.textContent = originalText;
+        });
+      } else {
+        pdf.save(filename);
+        btn.disabled = false;
+        label.textContent = originalText;
+      }
+    }).catch(function(e) {
+      alert('PDF 생성 중 문제가 발생했어요. 다시 시도해주세요.');
+      btn.disabled = false;
+      label.textContent = originalText;
+    });
+  }
+
+  $('pdfBtn').addEventListener('click', exportPdf);
 
   $('resetBtn').addEventListener('click', function() {
     if (!confirm('작성 중인 내용을 모두 초기화할까요? (저장된 최근 문서는 유지됩니다)')) return;
