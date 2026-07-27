@@ -138,7 +138,16 @@
     #qmPreview table.doc-table th, #qmPreview table.doc-table td { border:1px solid #ccc; padding:6px 8px; font-size:0.76rem; }
     #qmPreview table.doc-table th { background:#F3F4F6; text-align:center; }
     #qmPreview table.doc-table td.num { text-align:right; }
-    #qmPreview table.doc-table tfoot td { font-weight:700; background:#FAFAFB; }
+    #qmPreview table.doc-table thead tr.doc-cont-row th {
+      background:transparent; border:none; text-align:left; font-weight:400;
+      font-size:0.68rem; color:#999; padding:0 2px 6px;
+    }
+    #qmPreview table.doc-table tbody tr { break-inside:avoid; }
+    #qmPreview table.doc-totals-table { width:100%; border-collapse:collapse; margin:-14px 0 14px; break-inside:avoid; }
+    #qmPreview table.doc-totals-table td { border:1px solid #ccc; padding:6px 8px; font-size:0.76rem; }
+    #qmPreview table.doc-totals-table td.label { text-align:right; }
+    #qmPreview table.doc-totals-table td.num { text-align:right; font-weight:700; background:#FAFAFB; width:140px; }
+    #qmPreview table.doc-totals-table tr.grand td { font-size:0.92rem; }
     #qmPreview .doc-notes { font-size:0.76rem; color:#555; border-top:1px dashed #ccc; padding-top:10px; margin-top:6px; }
     #qmPreview .doc-notes li { margin-left:16px; }
 
@@ -148,6 +157,7 @@
       #qmPreviewWrap, #qmPreviewWrap * { visibility:visible; }
       #qmPreviewWrap { position:absolute; left:0; top:0; width:100%; box-shadow:none; padding:0; }
       #qmPreview { border:none; }
+      .no-print { display:none !important; }
     }
 
     @media (max-width:720px) {
@@ -328,7 +338,7 @@
 
   <!-- 미리보기 -->
   <div id="qmPreviewWrap">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="no-print" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
       <p class="section-title" style="margin:0;" id="previewLabel">📄 표준 견적서 미리보기</p>
     </div>
     <div id="qmPreview"></div>
@@ -557,13 +567,16 @@
         '</div>' +
       '</div>' +
       '<div class="doc-total-banner">총 청구 금액 (부가세 ' + ($('vatMode').value === 'included' ? '포함' : '별도') + '): ' + amountToKorean(totals.final) + '</div>' +
-      '<table class="doc-table"><thead><tr><th>No</th><th>항목명</th><th>상세 규격</th><th>단위</th><th>수량</th><th>단가</th><th>금액</th><th>비고</th></tr></thead>' +
-      '<tbody>' + rowsHtml + '</tbody>' +
-      '<tfoot>' +
-        '<tr><td colspan="6" style="text-align:right;">공급가액</td><td class="num" colspan="2">' + Math.round(totals.supply).toLocaleString('ko-KR') + '</td></tr>' +
-        '<tr><td colspan="6" style="text-align:right;">부가가치세 (VAT)</td><td class="num" colspan="2">' + Math.round(totals.vat).toLocaleString('ko-KR') + '</td></tr>' +
-        '<tr><td colspan="6" style="text-align:right;">최 종 합 계</td><td class="num" colspan="2">₩' + Math.round(totals.final).toLocaleString('ko-KR') + '</td></tr>' +
-      '</tfoot></table>' +
+      '<table class="doc-table"><thead>' +
+        '<tr class="doc-cont-row"><th colspan="8">문서번호 ' + esc(docNo) + ' · ' + esc(sName) + ' → ' + esc($('rName').value || '수신처 미입력') + ' 귀중</th></tr>' +
+        '<tr><th>No</th><th>항목명</th><th>상세 규격</th><th>단위</th><th>수량</th><th>단가</th><th>금액</th><th>비고</th></tr>' +
+      '</thead>' +
+      '<tbody>' + rowsHtml + '</tbody></table>' +
+      '<table class="doc-totals-table">' +
+        '<tr><td class="label">공급가액</td><td class="num">' + Math.round(totals.supply).toLocaleString('ko-KR') + '</td></tr>' +
+        '<tr><td class="label">부가가치세 (VAT)</td><td class="num">' + Math.round(totals.vat).toLocaleString('ko-KR') + '</td></tr>' +
+        '<tr class="grand"><td class="label">최 종 합 계</td><td class="num">₩' + Math.round(totals.final).toLocaleString('ko-KR') + '</td></tr>' +
+      '</table>' +
       '<div class="doc-notes">' +
         '<p>📌 유효기간: 발행일로부터 ' + esc($('docValidity').value) + ' | 결제조건: ' + esc($('payTerm').value) + '</p>' +
         (($('bankInfo').value) ? '<p>🏦 입금 계좌: ' + esc($('bankInfo').value) + '</p>' : '') +
