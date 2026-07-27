@@ -153,11 +153,15 @@
 
     @page { margin: 12mm; }
     @media print {
-      body * { visibility:hidden; }
-      #qmPreviewWrap, #qmPreviewWrap * { visibility:visible; }
-      #qmPreviewWrap { position:absolute; left:0; top:0; width:100%; box-shadow:none; padding:0; }
+      /* 사이트바/추천도구 등 스크립트가 클래스 없이 삽입하는 요소까지 포함해
+         미리보기 조상 경로를 제외한 모든 형제 요소를 구조적으로 숨김 */
+      body > *:not(.page-with-sidebar) { display:none !important; }
+      .page-with-sidebar > *:not(.form-content) { display:none !important; }
+      .form-content > *:not(#qmPreviewWrap) { display:none !important; }
+      body, .page-with-sidebar, .form-content { display:block !important; margin:0 !important; padding:0 !important; width:auto !important; max-width:none !important; }
+      #qmPreviewWrap { box-shadow:none; padding:0; margin:0; }
       #qmPreview { border:none; }
-      .no-print { display:none !important; }
+      #qmPreviewWrap .no-print { display:none !important; }
     }
 
     @media (max-width:720px) {
