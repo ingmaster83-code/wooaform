@@ -334,6 +334,34 @@ nav a:hover { background: rgba(255,255,255,0.18); color: white; }
 .badge-free { background: #D1FAE5; color: #065F46; }
 .badge-gov  { background: #DBEAFE; color: #1E40AF; }
 .badge-ext  { background: #F3F4F6; color: #6B7280; }
+.badge-new  { background: #EDE9FE; color: #6D28D9; }
+
+.qm-cross-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--primary-light);
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+.qm-cross-promo p { margin: 0; font-size: 0.88rem; color: var(--text); }
+.qm-cross-promo strong { color: var(--primary-dark); }
+.qm-cross-promo a {
+  flex-shrink: 0;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.qm-cross-promo a:hover { background: var(--primary-dark); }
 
 /* ───── Page with Sidebar (Detail) ───── */
 .page-with-sidebar {

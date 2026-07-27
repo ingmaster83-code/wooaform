@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="naver-site-verification" content="ae2360f5c2dca9edede16500aba10535fa41b986" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+  <title>견적서·청구서 무료 만들기 — 자동 계산·PDF 저장 | WooaForm</title>
+  <meta name="description" content="상호명·계좌 한 번만 저장하면 자동 입력. 수량·단가·할인·부가세까지 자동 계산하고 견적서·청구서·영수증을 PDF로 바로 저장하세요. 입력 정보는 서버에 저장되지 않습니다.">
+  <meta name="keywords" content="견적서 만들기, 청구서 만들기, 영수증 만들기, 견적서 자동계산, 청구서 양식, 무료 견적서 프로그램, 부가세 자동계산 견적서">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wooaform.wooahouse.com/forms/quote-maker.html">
+  <link rel="alternate" hreflang="ko" href="https://wooaform.wooahouse.com/forms/quote-maker.html">
+  <link rel="alternate" hreflang="x-default" href="https://wooaform.wooahouse.com/forms/quote-maker.html">
+  <meta property="og:title" content="견적서·청구서 무료 만들기 — 자동 계산·PDF 저장 | WooaForm">
+  <meta property="og:description" content="상호명·계좌 자동 저장, 수량·단가·할인·부가세 자동 계산. 견적서·청구서·영수증을 바로 만들어 PDF로 저장하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wooaform.wooahouse.com/forms/quote-maker.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:image" content="https://wooaform.wooahouse.com/og-image.png">
+  <meta property="og:site_name" content="WooaForm">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="견적서·청구서 무료 만들기 — 자동 계산·PDF 저장 | WooaForm">
+  <meta name="twitter:description" content="상호명·계좌 자동 저장, 수량·단가·할인·부가세 자동 계산. 견적서·청구서·영수증을 바로 만들어 PDF로 저장하세요.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "견적서·청구서 만들기",
+    "url": "https://wooaform.wooahouse.com/forms/quote-maker.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"입력한 내 정보가 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. '자동 저장'을 체크하면 내 브라우저의 localStorage에만 저장되며, 서버로는 전송되지 않습니다. 브라우저 저장 데이터를 지우면 함께 삭제됩니다."}},
+      {"@type":"Question","name":"부가세 포함/별도는 어떻게 다른가요?","acceptedAnswer":{"@type":"Answer","text":"부가세 포함을 선택하면 입력한 단가에 이미 부가세가 들어있다고 보고 역산해 공급가액과 세액을 나눠 표시하고, 별도를 선택하면 입력한 금액을 공급가액으로 보고 부가세 10%를 더해 최종 금액을 계산합니다."}},
+      {"@type":"Question","name":"PDF로 저장이 안 될 때는 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"PDF 저장 버튼을 누르면 브라우저 인쇄 대화상자가 열립니다. 대상(프린터)에서 'PDF로 저장' 또는 'Microsoft Print to PDF'를 선택하면 됩니다. 이때 '추가 설정 › 머리글과 바닥글' 체크를 해제해야 날짜·URL 같은 브라우저 기본 표시가 문서에 찍히지 않습니다. 안 될 경우 인쇄 버튼으로 실제 프린터에 바로 출력할 수도 있습니다."}},
+      {"@type":"Question","name":"작성하던 문서를 나중에 다시 불러올 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 저장 버튼을 누르면 '최근 작성 문서'에 남아 브라우저를 껐다 켜도 목록에서 다시 불러올 수 있습니다. 단, 다른 기기나 브라우저에서는 보이지 않습니다."}}
+    ]
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#2563EB">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WooaForm">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .qm-doctype-tabs { display:flex; gap:8px; margin:20px 0 4px; }
+    .qm-doctype-tabs button {
+      flex:1; padding:12px; border-radius:var(--radius-sm); border:1.5px solid var(--border);
+      background:white; font-family:inherit; font-size:0.92rem; font-weight:700; cursor:pointer; color:var(--text-light);
+    }
+    .qm-doctype-tabs button.active { border-color:var(--primary); background:var(--primary-light); color:var(--primary); }
+
+    .qm-card { background:white; border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:18px 20px; margin-bottom:16px; }
+    .qm-card h3 { font-size:0.95rem; font-weight:700; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; }
+    .qm-card h3 label { font-size:0.78rem; font-weight:600; color:var(--text-light); display:flex; align-items:center; gap:4px; cursor:pointer; }
+
+    .qm-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; }
+    .qm-field label { display:block; font-size:0.78rem; color:var(--text-light); margin-bottom:4px; font-weight:600; }
+    .qm-field input, .qm-field select, .qm-field textarea {
+      width:100%; padding:9px 10px; border:1px solid var(--border); border-radius:var(--radius-sm);
+      font-size:0.88rem; font-family:inherit; color:var(--text); background:#FAFAFB;
+    }
+    .qm-field input:focus, .qm-field select:focus, .qm-field textarea:focus { border-color:var(--primary); background:white; outline:none; }
+    .qm-field.wide { grid-column:1 / -1; }
+
+    .qm-table-wrap { overflow-x:auto; }
+    table.qm-items { width:100%; border-collapse:collapse; min-width:720px; }
+    table.qm-items th { font-size:0.74rem; color:var(--text-light); font-weight:700; text-align:left; padding:6px 6px; border-bottom:2px solid var(--border); white-space:nowrap; }
+    table.qm-items td { padding:5px 4px; vertical-align:top; }
+    table.qm-items input, table.qm-items select { padding:7px 8px; font-size:0.84rem; border:1px solid var(--border); border-radius:6px; width:100%; font-family:inherit; }
+    table.qm-items .qm-num { width:78px; text-align:right; }
+    table.qm-items .qm-total { font-weight:700; color:var(--text); white-space:nowrap; padding-top:10px; font-size:0.86rem; }
+    .qm-area-btn { background:var(--primary-light); color:var(--primary); border:1px solid var(--primary); border-radius:6px; font-size:0.7rem; padding:3px 6px; cursor:pointer; white-space:nowrap; margin-top:3px; }
+    .qm-row-del { background:none; border:none; color:#EF4444; cursor:pointer; font-size:1rem; padding:6px; }
+
+    .qm-preset-row { display:flex; gap:6px; flex-wrap:wrap; margin:10px 0 14px; }
+    .qm-preset-btn { background:#F3F4F6; border:1px solid var(--border); border-radius:20px; padding:6px 12px; font-size:0.78rem; cursor:pointer; font-family:inherit; color:var(--text); }
+    .qm-preset-btn:hover { background:var(--primary-light); border-color:var(--primary); color:var(--primary); }
+
+    .qm-add-row-btn { margin-top:8px; background:white; border:1.5px dashed var(--border); border-radius:var(--radius-sm); padding:10px; width:100%; font-family:inherit; font-size:0.86rem; color:var(--text-light); cursor:pointer; }
+    .qm-add-row-btn:hover { border-color:var(--primary); color:var(--primary); }
+
+    .qm-summary { background:var(--primary-light); border-radius:var(--radius); padding:20px; margin-bottom:16px; }
+    .qm-summary-row { display:flex; justify-content:space-between; font-size:0.88rem; color:var(--text-light); padding:4px 0; }
+    .qm-summary-row.final { font-size:1.15rem; font-weight:800; color:var(--primary); border-top:1.5px solid rgba(37,99,235,0.25); margin-top:8px; padding-top:10px; }
+    .qm-summary-words { font-size:0.78rem; color:var(--text-light); text-align:right; margin-top:2px; }
+
+    .qm-actions { display:flex; gap:10px; flex-wrap:wrap; margin:16px 0; }
+    .qm-btn { padding:12px 22px; border-radius:var(--radius-sm); border:none; font-family:inherit; font-weight:700; font-size:0.9rem; cursor:pointer; }
+    .qm-btn-primary { background:var(--primary); color:white; }
+    .qm-btn-primary:hover { background:var(--primary-dark); }
+    .qm-btn-ghost { background:white; border:1.5px solid var(--border); color:var(--text); }
+    .qm-btn-ghost:hover { border-color:var(--primary); color:var(--primary); }
+    .qm-warning { background:#FEF3C7; border:1px solid #FDE68A; border-radius:var(--radius-sm); padding:12px 14px; font-size:0.8rem; color:#92400E; margin-bottom:16px; }
+
+    .qm-recent { display:flex; flex-direction:column; gap:6px; }
+    .qm-recent-item { display:flex; justify-content:space-between; align-items:center; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:8px 12px; font-size:0.82rem; }
+    .qm-recent-item button { background:none; border:none; color:var(--primary); font-weight:700; cursor:pointer; font-size:0.78rem; }
+    .qm-recent-empty { color:var(--text-light); font-size:0.85rem; }
+
+    /* ── 미리보기 문서 ── */
+    #qmPreviewWrap { background:white; border-radius:var(--radius); box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:24px; }
+    #qmPreview { border:1px solid #ddd; padding:32px; font-size:0.82rem; color:#111; background:white; }
+    #qmPreview h2.doc-title { text-align:center; font-size:1.4rem; font-weight:800; letter-spacing:4px; margin:6px 0 2px; }
+    #qmPreview .doc-sub { text-align:center; font-size:0.7rem; color:#888; letter-spacing:2px; margin-bottom:16px; }
+    #qmPreview .doc-meta { display:flex; justify-content:space-between; font-size:0.75rem; color:#555; margin-bottom:14px; }
+    #qmPreview .doc-parties { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; font-size:0.78rem; }
+    #qmPreview .doc-parties .party-box { border:1px solid #ddd; border-radius:6px; padding:10px 12px; }
+    #qmPreview .doc-parties .party-box .party-title { font-weight:700; margin-bottom:6px; color:#333; }
+    #qmPreview .doc-parties .party-box .party-row { display:flex; gap:6px; padding:1px 0; }
+    #qmPreview .doc-parties .party-box .party-row span:first-child { color:#888; min-width:56px; }
+    #qmPreview .doc-total-banner { background:#EFF6FF; border-radius:6px; padding:10px 14px; text-align:center; font-weight:800; font-size:1rem; color:#1D4ED8; margin-bottom:14px; }
+    #qmPreview table.doc-table { width:100%; border-collapse:collapse; margin-bottom:14px; }
+    #qmPreview table.doc-table th, #qmPreview table.doc-table td { border:1px solid #ccc; padding:6px 8px; font-size:0.76rem; }
+    #qmPreview table.doc-table th { background:#F3F4F6; text-align:center; }
+    #qmPreview table.doc-table td.num { text-align:right; }
+    #qmPreview table.doc-table tfoot td { font-weight:700; background:#FAFAFB; }
+    #qmPreview .doc-notes { font-size:0.76rem; color:#555; border-top:1px dashed #ccc; padding-top:10px; margin-top:6px; }
+    #qmPreview .doc-notes li { margin-left:16px; }
+
+    @page { margin: 12mm; }
+    @media print {
+      body * { visibility:hidden; }
+      #qmPreviewWrap, #qmPreviewWrap * { visibility:visible; }
+      #qmPreviewWrap { position:absolute; left:0; top:0; width:100%; box-shadow:none; padding:0; }
+      #qmPreview { border:none; }
+    }
+
+    @media (max-width:720px) {
+      .qm-doctype-tabs { flex-direction:column; }
+      table.qm-items { min-width:640px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaForm</a>
+    <nav>
+      <a href="../index.html#contract">계약/법률</a>
+      <a href="../index.html#business">업무/비즈니스</a>
+      <a href="../index.html#hr">인사/HR</a>
+      <a href="../index.html#finance">재무/회계</a>
+    </nav>
+    <div class="header-right">
+      <a href="../about.html" style="color:white;font-size:.85rem;text-decoration:none;font-weight:600;">소개</a>
+    </div>
+  </div>
+</header>
+
+<script src="../js/wooa-sites-bar.js"></script>
+
+<div class="mobile-top-ad">
+  <ins class="adsbygoogle" style="display:block;width:100%;min-height:60px"
+    data-ad-client="ca-pub-6464921081676309"
+    data-ad-slot="7080296704"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<div class="form-hero">
+  <span class="cat-badge">💼 업무 / 비즈니스</span>
+  <h1>📝 견적서·청구서 만들기</h1>
+  <p>내 정보 한 번만 저장하면 자동으로 · 수량·할인·부가세 자동 계산 · PDF로 바로 저장</p>
+</div>
+
+<div class="page-with-sidebar">
+<div class="form-content">
+
+  <div class="breadcrumb">
+    <a href="../index.html">홈</a> &rsaquo; <a href="../index.html#business">업무/비즈니스</a> &rsaquo; 견적서·청구서 만들기
+  </div>
+
+  <div class="qm-warning">⚠️ 입력한 내용은 <strong>내 브라우저 안에만</strong> 저장되고 서버로 전송되지 않습니다. 보내기 전 금액과 항목을 꼭 확인하세요 — 오타·계산 오류로 인한 손해는 책임지지 않습니다.</div>
+
+  <div class="qm-doctype-tabs">
+    <button type="button" class="active" data-doctype="estimate" id="tabEstimate">📄 표준 견적서</button>
+    <button type="button" data-doctype="invoice" id="tabInvoice">🧾 청구서·영수증</button>
+  </div>
+
+  <!-- 내 정보 -->
+  <div class="qm-card">
+    <h3>🏢 내 정보 (공급자)
+      <label><input type="checkbox" id="saveSender" checked> 자동 저장</label>
+    </h3>
+    <div class="qm-grid">
+      <div class="qm-field"><label>상호명 *</label><input type="text" id="sName" placeholder="예: 우아상사"></div>
+      <div class="qm-field"><label>대표자명</label><input type="text" id="sCeo" placeholder="예: 홍길동"></div>
+      <div class="qm-field"><label>연락처</label><input type="text" id="sTel" placeholder="010-0000-0000"></div>
+      <div class="qm-field"><label>사업자등록번호 (선택)</label><input type="text" id="sBizNo" placeholder="000-00-00000"></div>
+      <div class="qm-field wide"><label>사업장 주소</label><input type="text" id="sAddr" placeholder="사업장 주소"></div>
+      <div class="qm-field"><label>이메일 / 팩스 (선택)</label><input type="text" id="sEmail" placeholder="email@example.com"></div>
+    </div>
+  </div>
+
+  <!-- 문서 · 수신자 정보 -->
+  <div class="qm-card">
+    <h3>🧾 문서 · 수신자 정보</h3>
+    <div class="qm-grid">
+      <div class="qm-field"><label>문서 번호</label><input type="text" id="docNo" placeholder="자동"></div>
+      <div class="qm-field"><label>작성 일자</label><input type="date" id="docDate"></div>
+      <div class="qm-field">
+        <label>유효 기간</label>
+        <select id="docValidity">
+          <option value="14일">14일</option>
+          <option value="30일">30일</option>
+          <option value="별도 협의">별도 협의</option>
+        </select>
+      </div>
+      <div class="qm-field"><label>고객명 (수신 업체) *</label><input type="text" id="rName" placeholder="예: (주)수신처"></div>
+      <div class="qm-field"><label>담당자 · 직급</label><input type="text" id="rContact" placeholder="예: 김담당 과장"></div>
+      <div class="qm-field"><label>고객 연락처</label><input type="text" id="rTel" placeholder="010-0000-0000"></div>
+      <div class="qm-field wide"><label>주소 / 이메일</label><input type="text" id="rAddr" placeholder="수신처 주소 또는 이메일"></div>
+    </div>
+  </div>
+
+  <!-- 항목 -->
+  <div class="qm-card">
+    <h3>📝 견적 항목</h3>
+    <div class="qm-preset-row">
+      <button type="button" class="qm-preset-btn" data-preset="product">📦 일반 상품</button>
+      <button type="button" class="qm-preset-btn" data-preset="service">🛠️ 서비스/시공</button>
+      <button type="button" class="qm-preset-btn" data-preset="area">📐 면적 시공</button>
+      <button type="button" class="qm-preset-btn" data-preset="trip">🚚 출장/배송</button>
+      <button type="button" class="qm-preset-btn" data-preset="package">⭐ 패키지</button>
+      <button type="button" class="qm-preset-btn" data-preset="discount">🔻 할인</button>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-light);margin-bottom:8px;">💡 할인은 단가를 마이너스(예: -10000)로 넣으면 합계에서 빠져요. · ㎡ 버튼으로 가로×세로 면적을 수량에 바로 적용할 수 있어요.</p>
+    <div class="qm-table-wrap">
+      <table class="qm-items" id="itemsTable">
+        <thead>
+          <tr>
+            <th style="width:26px;">#</th>
+            <th style="min-width:140px;">항목명</th>
+            <th style="min-width:110px;">규격/상세</th>
+            <th style="width:60px;">단위</th>
+            <th style="width:78px;">수량</th>
+            <th style="width:96px;">단가</th>
+            <th style="width:100px;">합계</th>
+            <th style="min-width:90px;">비고</th>
+            <th style="width:28px;"></th>
+          </tr>
+        </thead>
+        <tbody id="itemsBody"></tbody>
+      </table>
+    </div>
+    <button type="button" class="qm-add-row-btn" id="addRowBtn">＋ 빈 행 추가</button>
+  </div>
+
+  <!-- 결제 조건 -->
+  <div class="qm-card">
+    <h3>⚙️ 결제 조건 · 안내</h3>
+    <div class="qm-grid">
+      <div class="qm-field">
+        <label>부가세 (VAT)</label>
+        <select id="vatMode">
+          <option value="included">부가세 포함 (+10%)</option>
+          <option value="excluded">부가세 미포함</option>
+        </select>
+      </div>
+      <div class="qm-field">
+        <label>결제 조건</label>
+        <select id="payTerm">
+          <option value="완료 후 즉시 결제">완료 후 즉시 결제</option>
+          <option value="착수 50% / 완료 50%">착수 50% / 완료 50%</option>
+          <option value="계산서 익월 결제">계산서 익월 결제</option>
+          <option value="별도 협의">별도 협의</option>
+        </select>
+      </div>
+      <div class="qm-field wide">
+        <label>🏦 입금 계좌
+          <span style="font-weight:400;"><input type="checkbox" id="saveBank" checked style="width:auto;display:inline;vertical-align:middle;"> 자동 저장</span>
+        </label>
+        <input type="text" id="bankInfo" placeholder="예: 국민은행 123-456-789012 (예금주: 홍길동)">
+      </div>
+      <div class="qm-field wide"><label>특이사항 / 안내</label><textarea id="docNotes" rows="2" placeholder="예: 본 견적은 발행일로부터 14일간 유효합니다."></textarea></div>
+    </div>
+  </div>
+
+  <!-- 산출 요약 -->
+  <div class="qm-summary">
+    <h3 style="font-size:0.85rem;color:var(--text-light);margin-bottom:8px;">💰 산출 요약 <span style="font-weight:400;">(내부용)</span></h3>
+    <div class="qm-summary-row"><span>항목 순수 합계</span><span id="sumRaw">0원</span></div>
+    <div class="qm-summary-row"><span>공급가액</span><span id="sumSupply">0원</span></div>
+    <div class="qm-summary-row"><span>부가세 (VAT)</span><span id="sumVat">0원</span></div>
+    <div class="qm-summary-row final"><span>최종 청구 금액</span><span id="sumFinal">₩0</span></div>
+    <div class="qm-summary-words" id="sumWords"></div>
+  </div>
+
+  <div class="qm-actions">
+    <button type="button" class="qm-btn qm-btn-primary" id="saveDocBtn">💾 저장</button>
+    <button type="button" class="qm-btn qm-btn-primary" id="pdfBtn">📥 PDF로 저장 / 인쇄</button>
+    <button type="button" class="qm-btn qm-btn-ghost" id="resetBtn">↺ 초기화</button>
+  </div>
+  <p style="font-size:0.78rem;color:var(--text-light);margin:-8px 0 16px;">💡 인쇄 대화상자에서 <strong>'추가 설정 &rsaquo; 머리글과 바닥글'</strong> 체크를 해제하면 날짜·페이지 제목 없이 깔끔하게 저장돼요.</p>
+
+  <!-- 최근 문서 -->
+  <div class="qm-card">
+    <h3>🗂️ 최근 작성 문서 보관함</h3>
+    <div class="qm-recent" id="recentDocs"><span class="qm-recent-empty">저장된 내역이 없어요.</span></div>
+  </div>
+
+  <!-- 미리보기 -->
+  <div id="qmPreviewWrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <p class="section-title" style="margin:0;" id="previewLabel">📄 표준 견적서 미리보기</p>
+    </div>
+    <div id="qmPreview"></div>
+  </div>
+
+  <div class="wooa-orig-anchor"></div>
+
+  <div class="tips-panel">
+    <h3>💡 Tips</h3>
+    <ul>
+      <li>견적 유효기간을 명시하지 않으면 이후 가격 인상 시 분쟁이 생길 수 있으니 반드시 기재하세요.</li>
+      <li>부가세 포함(VAT 포함)/별도 여부를 명확히 표기해 오해를 방지하세요.</li>
+      <li>"PDF로 저장" 버튼을 누른 뒤 인쇄 대화상자에서 프린터로 'PDF로 저장'을 선택하면 파일로 바로 저장됩니다.</li>
+      <li>이때 '추가 설정 › 머리글과 바닥글' 체크를 해제해야 날짜·URL 같은 브라우저 기본 표시가 문서에 찍히지 않습니다.</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>자주 묻는 질문</h2>
+    <details>
+      <summary>입력한 내 정보가 서버에 저장되나요?</summary>
+      <p>아니요. '자동 저장'을 체크하면 내 브라우저의 localStorage에만 저장되며, 서버로는 전송되지 않습니다. 브라우저 저장 데이터를 지우면 함께 삭제됩니다.</p>
+    </details>
+    <details>
+      <summary>부가세 포함/별도는 어떻게 다른가요?</summary>
+      <p>부가세 포함을 선택하면 입력한 단가에 이미 부가세가 들어있다고 보고 역산해 공급가액과 세액을 나눠 표시하고, 별도를 선택하면 입력한 금액을 공급가액으로 보고 부가세 10%를 더해 최종 금액을 계산합니다.</p>
+    </details>
+    <details>
+      <summary>PDF로 저장이 안 될 때는 어떻게 하나요?</summary>
+      <p>PDF 저장 버튼을 누르면 브라우저 인쇄 대화상자가 열립니다. 대상(프린터)에서 'PDF로 저장' 또는 'Microsoft Print to PDF'를 선택하면 됩니다. 이때 '추가 설정 › 머리글과 바닥글' 체크를 해제해야 날짜·URL 같은 브라우저 기본 표시가 문서에 찍히지 않습니다. 안 될 경우 인쇄 버튼으로 실제 프린터에 바로 출력할 수도 있습니다.</p>
+    </details>
+    <details>
+      <summary>작성하던 문서를 나중에 다시 불러올 수 있나요?</summary>
+      <p>네. 저장 버튼을 누르면 '최근 작성 문서'에 남아 브라우저를 껐다 켜도 목록에서 다시 불러올 수 있습니다. 단, 다른 기기나 브라우저에서는 보이지 않습니다.</p>
+    </details>
+  </div>
+
+</div>
+<aside class="tool-sidebar"></aside>
+</div>
+
+<footer class="footer"></footer>
+
+<script>
+(function() {
+  var LS_SENDER = 'wooaform_qm_sender';
+  var LS_BANK = 'wooaform_qm_bank';
+  var LS_RECENT = 'wooaform_qm_recent';
+  var docType = 'estimate'; // 'estimate' | 'invoice'
+  var rowSeq = 0;
+
+  var PRESETS = {
+    product:  { name:'', unit:'개',  note:'' },
+    service:  { name:'', unit:'식',  note:'' },
+    area:     { name:'', unit:'㎡',  note:'', showArea:true },
+    trip:     { name:'출장비',       unit:'건', note:'' },
+    package:  { name:'패키지',       unit:'식', note:'' },
+    discount: { name:'할인',         unit:'식', note:'' }
+  };
+
+  function $(id) { return document.getElementById(id); }
+  function num(v) { var n = parseFloat(String(v).replace(/,/g, '')); return isNaN(n) ? 0 : n; }
+  function won(n) { return Math.round(n).toLocaleString('ko-KR') + '원'; }
+
+  // ── 한글 금액 표기 ──
+  function amountToKorean(n) {
+    n = Math.round(n);
+    if (n === 0) return '영 (₩0)';
+    var units = ['', '만', '억', '조'];
+    var digits = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
+    var smallUnits = ['', '십', '백', '천'];
+    var str = String(n);
+    var groups = [];
+    while (str.length > 0) {
+      groups.unshift(str.slice(-4));
+      str = str.slice(0, -4);
+    }
+    var result = '';
+    for (var g = 0; g < groups.length; g++) {
+      var groupNum = parseInt(groups[g], 10);
+      if (groupNum === 0) continue;
+      var groupStr = '';
+      var gs = String(groupNum);
+      for (var i = 0; i < gs.length; i++) {
+        var d = parseInt(gs[i], 10);
+        var placeFromRight = gs.length - i - 1;
+        if (d === 0) continue;
+        groupStr += (d === 1 && placeFromRight > 0 ? '' : digits[d]) + smallUnits[placeFromRight];
+      }
+      result += groupStr + units[groups.length - g - 1];
+    }
+    return result + '원 (₩' + n.toLocaleString('ko-KR') + ')';
+  }
+
+  // ── 항목 행 ──
+  function addRow(preset) {
+    rowSeq++;
+    var tbody = $('itemsBody');
+    var tr = document.createElement('tr');
+    tr.dataset.rowId = rowSeq;
+    var p = preset ? PRESETS[preset] : { name:'', unit:'', note:'' };
+    tr.innerHTML =
+      '<td style="text-align:center;color:var(--text-light);font-size:0.78rem;">' + tbody.children.length + 1 + '</td>' +
+      '<td><input type="text" class="f-name" placeholder="항목명" value="' + (p.name||'') + '"></td>' +
+      '<td><input type="text" class="f-spec" placeholder="규격/상세"></td>' +
+      '<td><input type="text" class="f-unit" value="' + (p.unit||'') + '"></td>' +
+      '<td>' +
+        '<input type="text" class="f-qty qm-num" value="1">' +
+        (p.showArea ? '<br><button type="button" class="qm-area-btn" data-row="' + rowSeq + '">㎡ 계산</button>' : '') +
+      '</td>' +
+      '<td><input type="text" class="f-price qm-num" value="0"></td>' +
+      '<td class="qm-total" data-total="0">0</td>' +
+      '<td><input type="text" class="f-note" placeholder="비고"></td>' +
+      '<td><button type="button" class="qm-row-del" title="삭제">✕</button></td>';
+    tbody.appendChild(tr);
+
+    tr.querySelectorAll('input').forEach(function(inp) {
+      inp.addEventListener('input', recalc);
+    });
+    tr.querySelector('.qm-row-del').addEventListener('click', function() {
+      tr.remove();
+      renumberRows();
+      recalc();
+    });
+    var areaBtn = tr.querySelector('.qm-area-btn');
+    if (areaBtn) {
+      areaBtn.addEventListener('click', function() {
+        var w = prompt('가로 길이(m)를 입력하세요');
+        if (w === null) return;
+        var h = prompt('세로 길이(m)를 입력하세요');
+        if (h === null) return;
+        var area = num(w) * num(h);
+        tr.querySelector('.f-qty').value = area > 0 ? area.toFixed(2) : '1';
+        recalc();
+      });
+    }
+    recalc();
+  }
+
+  function renumberRows() {
+    var rows = $('itemsBody').children;
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].children[0].textContent = i + 1;
+    }
+  }
+
+  // ── 계산 ──
+  function recalc() {
+    var rawSum = 0;
+    var rows = $('itemsBody').children;
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var qty = num(row.querySelector('.f-qty').value);
+      var price = num(row.querySelector('.f-price').value);
+      var total = qty * price;
+      row.querySelector('.qm-total').textContent = won(total);
+      row.querySelector('.qm-total').dataset.total = total;
+      rawSum += total;
+    }
+
+    var vatMode = $('vatMode').value;
+    var supply, vat, final;
+    if (vatMode === 'included') {
+      final = rawSum;
+      supply = Math.round(rawSum / 1.1);
+      vat = rawSum - supply;
+    } else {
+      supply = rawSum;
+      vat = Math.round(rawSum * 0.1);
+      final = supply + vat;
+    }
+
+    $('sumRaw').textContent = won(rawSum);
+    $('sumSupply').textContent = won(supply);
+    $('sumVat').textContent = won(vat);
+    $('sumFinal').textContent = '₩' + Math.round(final).toLocaleString('ko-KR');
+    $('sumWords').textContent = amountToKorean(final);
+
+    renderPreview({ rawSum: rawSum, supply: supply, vat: vat, final: final });
+  }
+
+  // ── 미리보기 렌더 ──
+  function renderPreview(totals) {
+    var isInvoice = docType === 'invoice';
+    var title = isInvoice ? '청 구 서' : '견 적 서';
+    var subtitle = isInvoice ? 'INVOICE / RECEIPT' : 'ESTIMATE / QUOTATION';
+    $('previewLabel').textContent = isInvoice ? '🧾 청구서·영수증 미리보기' : '📄 표준 견적서 미리보기';
+
+    var sName = $('sName').value || '(상호 미입력)';
+    var docNo = $('docNo').value || ('AUTO-' + new Date().toISOString().slice(0,10).replace(/-/g,''));
+    var docDate = $('docDate').value || new Date().toISOString().slice(0,10);
+
+    var rowsHtml = '';
+    var rows = $('itemsBody').children;
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var name = row.querySelector('.f-name').value || '-';
+      var spec = row.querySelector('.f-spec').value || '';
+      var unit = row.querySelector('.f-unit').value || '';
+      var qty = row.querySelector('.f-qty').value || '0';
+      var price = num(row.querySelector('.f-price').value);
+      var total = num(row.querySelector('.qm-total').dataset.total);
+      var note = row.querySelector('.f-note').value || '';
+      rowsHtml += '<tr><td style="text-align:center;">' + (i+1) + '</td><td>' + esc(name) + '</td><td>' + esc(spec) + '</td>' +
+        '<td style="text-align:center;">' + esc(unit) + '</td><td class="num">' + esc(qty) + '</td>' +
+        '<td class="num">' + price.toLocaleString('ko-KR') + '</td><td class="num">' + total.toLocaleString('ko-KR') + '</td><td>' + esc(note) + '</td></tr>';
+    }
+    if (rows.length === 0) {
+      rowsHtml = '<tr><td colspan="8" style="text-align:center;color:#999;">항목을 추가해주세요</td></tr>';
+    }
+
+    var html =
+      '<h2 class="doc-title">' + title + '</h2>' +
+      '<p class="doc-sub">' + subtitle + '</p>' +
+      '<div class="doc-meta"><span>문서번호: ' + esc(docNo) + '</span><span>작성일자: ' + esc(docDate) + '</span></div>' +
+      '<div class="doc-parties">' +
+        '<div class="party-box"><div class="party-title">수신 (발주처) — ' + esc($('rName').value || '') + ' 귀중</div>' +
+          '<div class="party-row"><span>담당자</span><span>' + esc($('rContact').value || '-') + '</span></div>' +
+          '<div class="party-row"><span>연락처</span><span>' + esc($('rTel').value || '-') + '</span></div>' +
+          '<div class="party-row"><span>주소/이메일</span><span>' + esc($('rAddr').value || '-') + '</span></div>' +
+        '</div>' +
+        '<div class="party-box"><div class="party-title">발신 (공급자) — ' + esc(sName) + '</div>' +
+          '<div class="party-row"><span>대표</span><span>' + esc($('sCeo').value || '-') + '</span></div>' +
+          '<div class="party-row"><span>사업장 주소</span><span>' + esc($('sAddr').value || '-') + '</span></div>' +
+          '<div class="party-row"><span>연락처</span><span>' + esc($('sTel').value || '-') + '</span></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="doc-total-banner">총 청구 금액 (부가세 ' + ($('vatMode').value === 'included' ? '포함' : '별도') + '): ' + amountToKorean(totals.final) + '</div>' +
+      '<table class="doc-table"><thead><tr><th>No</th><th>항목명</th><th>상세 규격</th><th>단위</th><th>수량</th><th>단가</th><th>금액</th><th>비고</th></tr></thead>' +
+      '<tbody>' + rowsHtml + '</tbody>' +
+      '<tfoot>' +
+        '<tr><td colspan="6" style="text-align:right;">공급가액</td><td class="num" colspan="2">' + Math.round(totals.supply).toLocaleString('ko-KR') + '</td></tr>' +
+        '<tr><td colspan="6" style="text-align:right;">부가가치세 (VAT)</td><td class="num" colspan="2">' + Math.round(totals.vat).toLocaleString('ko-KR') + '</td></tr>' +
+        '<tr><td colspan="6" style="text-align:right;">최 종 합 계</td><td class="num" colspan="2">₩' + Math.round(totals.final).toLocaleString('ko-KR') + '</td></tr>' +
+      '</tfoot></table>' +
+      '<div class="doc-notes">' +
+        '<p>📌 유효기간: 발행일로부터 ' + esc($('docValidity').value) + ' | 결제조건: ' + esc($('payTerm').value) + '</p>' +
+        (($('bankInfo').value) ? '<p>🏦 입금 계좌: ' + esc($('bankInfo').value) + '</p>' : '') +
+        (($('docNotes').value) ? '<p>💡 ' + esc($('docNotes').value) + '</p>' : '') +
+      '</div>';
+    $('qmPreview').innerHTML = html;
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  // ── 문서 타입 탭 ──
+  $('tabEstimate').addEventListener('click', function() { setDocType('estimate'); });
+  $('tabInvoice').addEventListener('click', function() { setDocType('invoice'); });
+  function setDocType(t) {
+    docType = t;
+    $('tabEstimate').classList.toggle('active', t === 'estimate');
+    $('tabInvoice').classList.toggle('active', t === 'invoice');
+    recalc();
+  }
+
+  // ── 항목 프리셋/추가 ──
+  document.querySelectorAll('.qm-preset-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { addRow(btn.dataset.preset); });
+  });
+  $('addRowBtn').addEventListener('click', function() { addRow(); });
+
+  // ── 부가세/조건 변경 시 재계산 ──
+  ['vatMode','payTerm','docValidity','bankInfo','docNotes','sName','sCeo','sTel','sBizNo','sAddr','sEmail',
+   'docNo','docDate','rName','rContact','rTel','rAddr'].forEach(function(id) {
+    var el = $(id);
+    if (el) el.addEventListener('input', recalc);
+    if (el && el.tagName === 'SELECT') el.addEventListener('change', recalc);
+  });
+
+  // ── 내 정보/계좌 자동 저장 ──
+  function loadSaved() {
+    try {
+      var sender = JSON.parse(localStorage.getItem(LS_SENDER) || '{}');
+      ['sName','sCeo','sTel','sBizNo','sAddr','sEmail'].forEach(function(id) {
+        if (sender[id]) $(id).value = sender[id];
+      });
+      var bank = localStorage.getItem(LS_BANK);
+      if (bank) $('bankInfo').value = bank;
+    } catch (e) {}
+  }
+  function persistSaved() {
+    if ($('saveSender').checked) {
+      var sender = {};
+      ['sName','sCeo','sTel','sBizNo','sAddr','sEmail'].forEach(function(id) { sender[id] = $(id).value; });
+      localStorage.setItem(LS_SENDER, JSON.stringify(sender));
+    }
+    if ($('saveBank').checked) {
+      localStorage.setItem(LS_BANK, $('bankInfo').value);
+    }
+  }
+  ['sName','sCeo','sTel','sBizNo','sAddr','sEmail','bankInfo'].forEach(function(id) {
+    $(id).addEventListener('change', persistSaved);
+  });
+
+  // ── 문서 번호 자동 생성 ──
+  function autoDocNo() {
+    var d = new Date();
+    var prefix = docType === 'invoice' ? 'IV' : 'Q';
+    return prefix + '-' + d.getFullYear() + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0');
+  }
+
+  // ── 저장 / 최근 문서 ──
+  function loadRecent() {
+    var list = [];
+    try { list = JSON.parse(localStorage.getItem(LS_RECENT) || '[]'); } catch (e) {}
+    var wrap = $('recentDocs');
+    if (list.length === 0) {
+      wrap.innerHTML = '<span class="qm-recent-empty">저장된 내역이 없어요.</span>';
+      return;
+    }
+    wrap.innerHTML = '';
+    list.slice(0, 8).forEach(function(item, idx) {
+      var div = document.createElement('div');
+      div.className = 'qm-recent-item';
+      div.innerHTML = '<span>' + esc(item.label) + '</span><button type="button">불러오기</button>';
+      div.querySelector('button').addEventListener('click', function() { restoreSnapshot(item.data); });
+      wrap.appendChild(div);
+    });
+  }
+
+  function snapshot() {
+    var data = {};
+    ['sName','sCeo','sTel','sBizNo','sAddr','sEmail','docNo','docDate','docValidity',
+     'rName','rContact','rTel','rAddr','vatMode','payTerm','bankInfo','docNotes'].forEach(function(id) {
+      data[id] = $(id).value;
+    });
+    data.docType = docType;
+    data.items = [];
+    var rows = $('itemsBody').children;
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      data.items.push({
+        name: row.querySelector('.f-name').value,
+        spec: row.querySelector('.f-spec').value,
+        unit: row.querySelector('.f-unit').value,
+        qty: row.querySelector('.f-qty').value,
+        price: row.querySelector('.f-price').value,
+        note: row.querySelector('.f-note').value
+      });
+    }
+    return data;
+  }
+
+  function restoreSnapshot(data) {
+    ['sName','sCeo','sTel','sBizNo','sAddr','sEmail','docNo','docDate','docValidity',
+     'rName','rContact','rTel','rAddr','vatMode','payTerm','bankInfo','docNotes'].forEach(function(id) {
+      if (data[id] !== undefined) $(id).value = data[id];
+    });
+    setDocType(data.docType || 'estimate');
+    $('itemsBody').innerHTML = '';
+    (data.items || []).forEach(function(it) {
+      addRow();
+      var row = $('itemsBody').lastElementChild;
+      row.querySelector('.f-name').value = it.name || '';
+      row.querySelector('.f-spec').value = it.spec || '';
+      row.querySelector('.f-unit').value = it.unit || '';
+      row.querySelector('.f-qty').value = it.qty || '1';
+      row.querySelector('.f-price').value = it.price || '0';
+      row.querySelector('.f-note').value = it.note || '';
+    });
+    recalc();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  $('saveDocBtn').addEventListener('click', function() {
+    persistSaved();
+    var data = snapshot();
+    var label = (data.docType === 'invoice' ? '청구서' : '견적서') + ' · ' + (data.rName || '수신처 미입력') + ' · ' + (data.docDate || '');
+    var list = [];
+    try { list = JSON.parse(localStorage.getItem(LS_RECENT) || '[]'); } catch (e) {}
+    list.unshift({ label: label, data: data, savedAt: Date.now() });
+    if (list.length > 10) list = list.slice(0, 10);
+    localStorage.setItem(LS_RECENT, JSON.stringify(list));
+    loadRecent();
+    alert('저장되었습니다. 아래 "최근 작성 문서"에서 다시 불러올 수 있어요.');
+  });
+
+  $('pdfBtn').addEventListener('click', function() { window.print(); });
+
+  $('resetBtn').addEventListener('click', function() {
+    if (!confirm('작성 중인 내용을 모두 초기화할까요? (저장된 최근 문서는 유지됩니다)')) return;
+    $('itemsBody').innerHTML = '';
+    ['docNo','docDate','rName','rContact','rTel','rAddr','bankInfo','docNotes'].forEach(function(id) { $(id).value = ''; });
+    addRow(); addRow();
+    recalc();
+  });
+
+  // ── 초기화 ──
+  loadSaved();
+  loadRecent();
+  $('docDate').value = new Date().toISOString().slice(0, 10);
+  $('docNo').placeholder = autoDocNo();
+  addRow();
+  addRow();
+  recalc();
+})();
+</script>
+
+<script src="../js/wooaform-related-forms.js"></script>
+<script src="../js/wooahouse-originals-tool.js"></script>
+<script src="../js/pwa-install.js"></script>
+<script src="../js/wooa-sidebar.js"></script>
+<script src="../js/wooa-footer.js"></script>
+</body>
+</html>

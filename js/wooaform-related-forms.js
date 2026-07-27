@@ -7,6 +7,7 @@
     { s:'service-contract',  ko:'용역계약서',           i:'🤝', c:'contract', url:'forms/service-contract.html', internal:true },
     { s:'nda',               ko:'비밀유지서약서(NDA)',  i:'🔒', c:'contract', url:'forms/nda.html',              internal:true },
     /* ── 업무/비즈니스 ── */
+    { s:'quote-maker',       ko:'견적서·청구서 자동계산기', i:'🧮', c:'business', url:'forms/quote-maker.html', internal:true },
     { s:'estimate',          ko:'견적서',               i:'💰', c:'business', url:'forms/estimate.html',         internal:true },
     { s:'transaction',       ko:'거래명세서',           i:'🧾', c:'business', url:'forms/transaction.html',      internal:true },
     { s:'order',             ko:'발주서',               i:'📦', c:'business', url:'forms/order.html',            internal:true },
