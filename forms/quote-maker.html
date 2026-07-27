@@ -436,7 +436,7 @@
     tr.dataset.rowId = rowSeq;
     var p = preset ? PRESETS[preset] : { name:'', unit:'', note:'' };
     tr.innerHTML =
-      '<td style="text-align:center;color:var(--text-light);font-size:0.78rem;">' + tbody.children.length + 1 + '</td>' +
+      '<td style="text-align:center;color:var(--text-light);font-size:0.78rem;">' + (tbody.children.length + 1) + '</td>' +
       '<td><input type="text" class="f-name" placeholder="항목명" value="' + (p.name||'') + '"></td>' +
       '<td><input type="text" class="f-spec" placeholder="규격/상세"></td>' +
       '<td><input type="text" class="f-unit" value="' + (p.unit||'') + '"></td>' +
